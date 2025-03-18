@@ -28,30 +28,19 @@ composer -V
 composer create-project laravel/laravel project_name
 ```
 
-## 🔧 5. Install Node.js and NPM
-```bash
-sudo apt install nodejs npm -y
-node -v
-npm -v
-```
-
-## 🔧 6. Upgrade NPM (Optional)
-```bash
-sudo npm install -g npm@latest
-```
-
-## 🔧 7. Install React.js (Create React App)
-```bash
-npx create-react-app react_project_name
-```
-
-## 🔧 8. Install MySQL / MariaDB
+## 🔧 5. Install MySQL 
 ```bash
 sudo apt install mysql-server -y
 sudo mysql_secure_installation
 ```
 
-## 🔧 9. Configure Laravel .env for MySQL
+## 🔧 6. Start MongoDB Service
+```bash
+sudo systemctl start mysql
+sudo systemctl enable mysql
+```
+
+## 🔧 7. Configure Laravel .env for MySQL
 ```env
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -61,25 +50,56 @@ DB_USERNAME=root
 DB_PASSWORD=your_password
 ```
 
-## 🔧 10. Install and Configure Docker (Optional)
-```bash
-sudo apt install docker.io -y
-sudo systemctl start docker
-sudo systemctl enable docker
-sudo usermod -aG docker $USER
-```
-
-## 🔧 11. Useful Laravel Commands
+## 🔧 8. Useful Laravel Commands
 ```bash
 php artisan serve
 php artisan migrate
 php artisan cache:clear
 ```
 
-## 🔧 12. Useful React Commands
+## 🔧 9. Install Node.js and NPM
+```bash
+sudo apt install nodejs npm -y
+node -v
+npm -v
+```
+
+## 🔧 10. Upgrade NPM (Optional)
+```bash
+sudo npm install -g npm@latest
+```
+
+## 🔧 11. Install MongoDB
+```bash
+wget -qO - https://www.mongodb.org/static/pgp/server-7.0.asc | sudo apt-key add -
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu $(lsb_release -cs)/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
+sudo apt update
+sudo apt install -y mongodb-org
+```
+
+## 🔧 12. Start MongoDB Service
+```bash
+sudo systemctl start mongod
+sudo systemctl enable mongod
+```
+
+## 🔧 13. Install React.js (Create React App)
+```bash
+npx create-react-app react_project_name
+```
+
+## 🔧 14. Useful React Commands
 ```bash
 cd react_project_name
 npm start
+```
+
+## 🔧 15. Install and Configure Docker 
+```bash
+sudo apt install docker.io -y
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo usermod -aG docker $USER
 ```
 
 
@@ -89,5 +109,7 @@ npm start
 *Feel free to fork, star ⭐, and contribute 👍*
 
 ---
+
+
 
 
