@@ -34,7 +34,7 @@ sudo apt install mysql-server -y
 sudo mysql_secure_installation
 ```
 
-## 🔧 6. Start MongoDB Service
+## 🔧 6. Start Mysql Service
 ```bash
 sudo systemctl start mysql
 sudo systemctl enable mysql
